@@ -16,6 +16,7 @@ router.post('/user', UserController.create);
 router.put('/post/:id', PostController.togglePost);
 router.put('/user/:id', UserController.toggleUser);
 
-router.delete('/post/:id', PostController.deletePost)
+router.delete('/post/:id', PostController.deletePost);
+router.delete('/user/:id', UserController.deleteUser);
 
 export default router;
