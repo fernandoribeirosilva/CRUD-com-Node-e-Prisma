@@ -13,6 +13,12 @@ type createDataProp = {
    age?: number
 }
 
+type updateDataProp = {
+   email?: string,
+   name?: string,
+   age?: number
+}
+
 export const UserService = {
 
    all: async () => {
@@ -33,5 +39,10 @@ export const UserService = {
             age: data.age ?? 0
          }
       })
-   }
+   },
+
+   update: async (id: number, data: updateDataProp) => {
+      return await prisma.user.update({ where: { id }, data });
+   },
+
 } 
