@@ -24,3 +24,13 @@ export const create = async (req: Request, res: Response) => {
    }
 
 }
+
+export const one = async (req: Request, res: Response) => {
+   const { id } = req.params;
+   const user = await UserService.findOne({ id: parseInt(id) });
+
+   if (!user) return res.status(200).json({ error: 'Usuário não existe.' });
+
+   return res.status(200).json({ user });
+
+}

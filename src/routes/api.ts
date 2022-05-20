@@ -8,6 +8,7 @@ const router = Router();
 router.get('/posts', PostController.all);
 router.get('/users', UserController.all);
 router.get('/post/:id', PostController.one);
+router.get('/user/:id', UserController.one);
 
 router.post('/post', PostController.create);
 router.post('/user', UserController.create);
